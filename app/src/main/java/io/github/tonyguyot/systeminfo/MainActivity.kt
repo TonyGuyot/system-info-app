@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        populateSystemView()
         mainNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 
@@ -43,5 +44,12 @@ class MainActivity : AppCompatActivity() {
         systemView.visibility = if (system) View.VISIBLE else View.GONE
         screenView.visibility = if (screen) View.VISIBLE else View.GONE
         hardwareView.visibility = if (hardware) View.VISIBLE else View.GONE
+    }
+
+    fun populateSystemView() {
+        val system = System()
+        systemReleaseName.setText(system.release)
+        systemCodeName.setText(system.codeName)
+        systemSdkValue.setText(system.sdkVersion)
     }
 }
