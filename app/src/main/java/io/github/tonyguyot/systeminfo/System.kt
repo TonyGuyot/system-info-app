@@ -2,12 +2,10 @@ package io.github.tonyguyot.systeminfo
 
 import android.os.Build
 
-
 /**
  * Manage information about the system.
  */
-
-class System() {
+class System {
 
     val release: String
         get() = "Android " + Build.VERSION.RELEASE
@@ -28,6 +26,9 @@ class System() {
             Build.VERSION_CODES.ICE_CREAM_SANDWICH -> "Ice Cream Sandwich"
             else -> ""
         }
+
+    val fullVersionName: String
+        get() = if (codeName.isEmpty()) release else "$release ($codeName)"
 
     val sdkVersion: String
         get() = "API level " + Build.VERSION.SDK_INT

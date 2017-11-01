@@ -48,8 +48,7 @@ class MainActivity : AppCompatActivity() {
 
     fun populateSystemView() {
         val system = System()
-        systemReleaseName.setText(system.release)
-        systemCodeName.setText(system.codeName)
+        systemReleaseName.setText(system.fullVersionName)
         systemSdkValue.setText(system.sdkVersion)
     }
 }
