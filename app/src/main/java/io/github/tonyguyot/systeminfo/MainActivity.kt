@@ -14,17 +14,14 @@ class MainActivity : AppCompatActivity() {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_system -> {
-                mainTitle.setText(R.string.title_system)
                 displayView(system = true)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_screen -> {
-                mainTitle.setText(R.string.title_screen)
                 displayView(screen = true)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_hardware -> {
-                mainTitle.setText(R.string.title_hardware)
                 displayView(hardware = true)
                 return@OnNavigationItemSelectedListener true
             }
@@ -39,6 +36,21 @@ class MainActivity : AppCompatActivity() {
         initSystemView()
         initScreenView()
         mainNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
+        // recovering the instance state
+        if (savedInstanceState != null) {
+            val selectedIndex = savedInstanceState.getInt("index")
+            when (selectedIndex) {
+                R.id.navigation_system -> displayView(system = true)
+                R.id.navigation_screen -> displayView(screen = true)
+                R.id.navigation_hardware -> displayView(hardware = true)
+            }
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        outState?.putInt("index", mainNavigation.selectedItemId)
     }
 
     fun displayView(system: Boolean = false, screen: Boolean = false, hardware: Boolean = false) {
