@@ -68,6 +68,7 @@ class MainActivity : AppCompatActivity() {
     fun initScreenView() {
         val screen = Screen(windowManager)
         screenResolution.setText(screen.dimensionsInPixels)
-        screenDensity.setText(screen.density.toString())
+        screenDensity.setText(screen.fullDensityInfo)
+        screenFontScaling.setText(screen.fontScaling.toString())
     }
 }
