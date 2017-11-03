@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         initSystemView()
         initScreenView()
+        initHardwareView()
         mainNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         // recovering the instance state
@@ -70,5 +71,12 @@ class MainActivity : AppCompatActivity() {
         screenResolution.setText(screen.dimensionsInPixels)
         screenDensity.setText(screen.fullDensityInfo)
         screenFontScaling.setText(screen.fontScaling.toString())
+    }
+
+    fun initHardwareView() {
+        val hw = Hardware()
+        hardwareManufacturer.setText(hw.manufacturer)
+        hardwareProduct.setText(hw.product)
+        hardwareModel.setText(hw.model)
     }
 }

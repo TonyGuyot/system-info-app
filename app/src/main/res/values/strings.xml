@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">SystemInfo</string>
+
+    <!-- strings for the navigation bar -->
     <string name="title_system">System</string>
     <string name="title_screen">Screen</string>
     <string name="title_hardware">Hardware</string>
+
+    <!-- strings for the hardware view -->
+    <string name="hardware_manufacturer_label">Manufacturer</string>
+    <string name="hardware_model_label">Model</string>
+    <string name="hardware_product_label">Product</string>
 </resources>
