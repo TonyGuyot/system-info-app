@@ -19,14 +19,14 @@ class Screen(windowManager: WindowManager) {
     }
 
     /** X and Y dimensions of the screen in pixels */
-    val dimensionsInPixels
+    val dimensionsInPixels: String
         get() = "${metrics.widthPixels} × ${metrics.heightPixels} pixels"
 
     /** density of the screen in dpi */
-    val density
+    val density: String
         get() = "${metrics.density * STANDARD_DENSITY} dpi"
 
-    val densityCategory
+    val densityCategory: String
         get() = when (metrics.densityDpi) {
             DisplayMetrics.DENSITY_LOW -> "ldpi"
             DisplayMetrics.DENSITY_MEDIUM -> "mdpi"
@@ -41,6 +41,6 @@ class Screen(windowManager: WindowManager) {
     val fullDensityInfo: String
         get() = if (densityCategory.isEmpty()) density else "$density ($densityCategory)"
 
-    val fontScaling
-        get() = metrics.scaledDensity
+    val fontScaling: String
+        get() = "${metrics.scaledDensity / metrics.density}×"
 }

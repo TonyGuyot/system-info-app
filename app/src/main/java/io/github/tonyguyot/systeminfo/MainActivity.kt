@@ -62,21 +62,36 @@ class MainActivity : AppCompatActivity() {
 
     fun initSystemView() {
         val system = System()
-        systemReleaseName.setText(system.fullVersionName)
-        systemSdkValue.setText(system.sdkVersion)
+        val version = resources.getString(R.string.system_android_version, system.release)
+        val sdk = resources.getString(R.string.system_api_level, system.sdkVersion)
+        systemAndroidVersion.text = version
+        systemCodeName.text = system.codeName
+        systemSdkValue.text = sdk
+        systemOsVersion.text = system.osVersion
     }
 
     fun initScreenView() {
         val screen = Screen(windowManager)
         screenResolution.setText(screen.dimensionsInPixels)
         screenDensity.setText(screen.fullDensityInfo)
-        screenFontScaling.setText(screen.fontScaling.toString())
+        screenFontScaling.setText(screen.fontScaling)
     }
 
     fun initHardwareView() {
-        val hw = Hardware()
-        hardwareManufacturer.setText(hw.manufacturer)
-        hardwareProduct.setText(hw.product)
-        hardwareModel.setText(hw.model)
+        val hw = Hardware(applicationContext)
+        hardwareTitle.text = hw.fullProductName
+        val product = resources.getString(R.string.hardware_brand_product, hw.brand, hw.product)
+        hardwareModel.text = product
+        if (hw.totalMemory > 0L) {
+            val memory = resources.getString(R.string.hardware_show_size, hw.availableMemoryWithUnit,
+                    hw.totalMemoryWithUnit)
+            hardwareRamSize.visibility = View.VISIBLE
+            hardwareRamSize.text = memory
+        } else {
+            hardwareRamSize.visibility = View.GONE
+        }
+        val storage = resources.getString(R.string.hardware_show_size, hw.availableStorageWithUnit,
+                hw.totalStorageWithUnit)
+        hardwareStorageSize.text = storage
     }
 }

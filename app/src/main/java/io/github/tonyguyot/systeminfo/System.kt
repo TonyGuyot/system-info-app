@@ -1,14 +1,24 @@
 package io.github.tonyguyot.systeminfo
 
 import android.os.Build
+import java.io.BufferedReader
+import java.io.File
 
 /**
  * Manage information about the system.
  */
 class System {
 
+    val osVersion: String
+
+    init {
+        val bufferedReader: BufferedReader = File("/proc/version").bufferedReader()
+        val fileContent = bufferedReader.use { it.readText() }
+        osVersion = fileContent.split(" ").subList(0, 3).joinToString(separator = " ")
+    }
+
     val release: String
-        get() = "Android " + Build.VERSION.RELEASE
+        get() = Build.VERSION.RELEASE
 
     val codeName: String
         get() = when (Build.VERSION.SDK_INT) {
@@ -30,12 +40,9 @@ class System {
     val fullVersionName: String
         get() = if (codeName.isEmpty()) release else "$release ($codeName)"
 
-    val sdkVersion: String
-        get() = "API level " + Build.VERSION.SDK_INT
+    val sdkVersion: Int
+        get() = Build.VERSION.SDK_INT
 
-    /*
-        Build.VERSION.BASE_OS
-        Build.VERSION.SECURITY_PATCH
-    */
-
+    val bootloader: String
+        get() = Build.BOOTLOADER
 }

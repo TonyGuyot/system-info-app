@@ -6,25 +6,20 @@
     android:layout_height="match_parent"
     android:visibility="gone">
 
+    <!-- Manufacturer + model name (title) -->
     <TableRow>
         <TextView
+            android:id="@+id/hardwareTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:text="@string/hardware_manufacturer_label"
-            />
-        <TextView
-            android:id="@+id/hardwareManufacturer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_span="2"
             />
     </TableRow>
 
+    <!-- Brand + product name -->
     <TableRow>
         <TextView
             android:layout_width="wrap_content"
@@ -35,7 +30,7 @@
             android:text="@string/hardware_product_label"
             />
         <TextView
-            android:id="@+id/hardwareProduct"
+            android:id="@+id/hardwareModel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -44,6 +39,7 @@
             />
     </TableRow>
 
+    <!-- RAM size -->
     <TableRow>
         <TextView
             android:layout_width="wrap_content"
@@ -51,10 +47,30 @@
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:text="@string/hardware_model_label"
+            android:text="@string/hardware_ram_size"
             />
         <TextView
-            android:id="@+id/hardwareModel"
+            android:id="@+id/hardwareRamSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            />
+    </TableRow>
+
+    <!-- internal storage -->
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/hardware_storage_size"
+            />
+        <TextView
+            android:id="@+id/hardwareStorageSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"

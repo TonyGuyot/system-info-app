@@ -7,8 +7,9 @@
     android:orientation="vertical"
     android:visibility="visible">
 
+    <!-- Android version number (title) -->
     <TextView
-        android:id="@+id/systemReleaseName"
+        android:id="@+id/systemAndroidVersion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -16,8 +17,39 @@
         android:layout_marginTop="@dimen/activity_vertical_margin"
         />
 
+    <!-- Android version code name (subtitle) -->
+    <TextView
+        android:id="@+id/systemCodeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        />
+
+    <!-- SDK version number -->
     <TextView
         android:id="@+id/systemSdkValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        />
+
+    <!-- NDK version number -->
+    <TextView
+        android:id="@+id/systemNdkValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        />
+
+    <!-- Kernel version number -->
+    <TextView
+        android:id="@+id/systemOsVersion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
