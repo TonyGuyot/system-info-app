@@ -64,34 +64,44 @@ class MainActivity : AppCompatActivity() {
         val system = System()
         val version = resources.getString(R.string.system_android_version, system.release)
         val sdk = resources.getString(R.string.system_api_level, system.sdkVersion)
+        val locale = resources.getString(R.string.system_locale, system.locale)
         systemAndroidVersion.text = version
         systemCodeName.text = system.codeName
         systemSdkValue.text = sdk
         systemOsVersion.text = system.osVersion
+        systemLocale.text = locale
     }
 
     fun initScreenView() {
-        val screen = Screen(windowManager)
-        screenResolution.setText(screen.dimensionsInPixels)
-        screenDensity.setText(screen.fullDensityInfo)
-        screenFontScaling.setText(screen.fontScaling)
+        val screen = Screen(windowManager, applicationContext)
+        screenResolution.text = screen.dimensionsInPixels
+        screenDensity.text = screen.fullDensityInfo
+        screenSize.text = screen.size
+        screenFontScaling.text = screen.fontScaling
+        if (screen.isLandscape()) {
+            screenOrientation.text = resources.getString(R.string.screen_orientation_landscape)
+        } else if (screen.isPortrait()) {
+            screenOrientation.text = resources.getString(R.string.screen_orientation_portrait)
+        } else {
+            screenOrientation.text = resources.getString(R.string.screen_orientation_undefined)
+        }
     }
 
     fun initHardwareView() {
         val hw = Hardware(applicationContext)
         hardwareTitle.text = hw.fullProductName
-        val product = resources.getString(R.string.hardware_brand_product, hw.brand, hw.product)
+        val product = resources.getString(R.string.hardware_brand_product, hw.brand.capitalize(), hw.product)
         hardwareModel.text = product
         if (hw.totalMemory > 0L) {
-            val memory = resources.getString(R.string.hardware_show_size, hw.availableMemoryWithUnit,
-                    hw.totalMemoryWithUnit)
+            val memory = resources.getString(R.string.hardware_show_size, hw.totalMemoryWithUnit,
+                    hw.availableMemoryWithUnit)
             hardwareRamSize.visibility = View.VISIBLE
             hardwareRamSize.text = memory
         } else {
             hardwareRamSize.visibility = View.GONE
         }
-        val storage = resources.getString(R.string.hardware_show_size, hw.availableStorageWithUnit,
-                hw.totalStorageWithUnit)
+        val storage = resources.getString(R.string.hardware_show_size, hw.totalStorageWithUnit,
+                hw.availableStorageWithUnit)
         hardwareStorageSize.text = storage
     }
 }

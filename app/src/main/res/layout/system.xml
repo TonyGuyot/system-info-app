@@ -37,9 +37,9 @@
         android:layout_marginTop="@dimen/activity_vertical_margin"
         />
 
-    <!-- NDK version number -->
+    <!-- Kernel version number -->
     <TextView
-        android:id="@+id/systemNdkValue"
+        android:id="@+id/systemOsVersion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -47,9 +47,9 @@
         android:layout_marginTop="@dimen/activity_vertical_margin"
         />
 
-    <!-- Kernel version number -->
+    <!-- Current selected locale -->
     <TextView
-        android:id="@+id/systemOsVersion"
+        android:id="@+id/systemLocale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"

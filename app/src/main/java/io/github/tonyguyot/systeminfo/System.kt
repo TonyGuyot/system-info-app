@@ -3,11 +3,13 @@ package io.github.tonyguyot.systeminfo
 import android.os.Build
 import java.io.BufferedReader
 import java.io.File
+import java.util.*
+import javax.microedition.khronos.opengles.GL10
 
 /**
  * Manage information about the system.
  */
-class System {
+class System() {
 
     val osVersion: String
 
@@ -43,6 +45,6 @@ class System {
     val sdkVersion: Int
         get() = Build.VERSION.SDK_INT
 
-    val bootloader: String
-        get() = Build.BOOTLOADER
+    val locale: String
+        get() = Locale.getDefault().displayName
 }

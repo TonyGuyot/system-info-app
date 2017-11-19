@@ -9,13 +9,15 @@
     <!-- strings for the system view -->
     <string name="system_android_version">Android version %s</string>
     <string name="system_api_level">API level %d</string>
-    <string name="system_ndk_level">NDK level %d</string>
     <string name="system_locale">Current locale is %s</string>
 
     <!-- strings for the screen view -->
     <string name="screen_density">Density:</string>
     <string name="screen_size">Size:</string>
     <string name="screen_orientation">Orientation:</string>
+    <string name="screen_orientation_landscape">Landscape</string>
+    <string name="screen_orientation_portrait">Portrait</string>
+    <string name="screen_orientation_undefined">Undefined</string>
     <string name="screen_font_scaling">Font scaling:</string>
 
     <!-- strings for the hardware view -->
@@ -23,5 +25,5 @@
     <string name="hardware_brand_product">%s - %s</string>
     <string name="hardware_ram_size">RAM size:</string>
     <string name="hardware_storage_size">Storage size:</string>
-    <string name="hardware_show_size">%s / %s</string>
+    <string name="hardware_show_size">%s (%s available)</string>
 </resources>
