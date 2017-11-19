@@ -59,7 +59,7 @@ class Screen(windowManager: WindowManager, context: Context) {
         get() = if (densityCategory.isEmpty()) densityWithUnit else "$densityWithUnit ($densityCategory)"
 
     val fontScaling: String
-        get() = "×${metrics.scaledDensity / metrics.density}"
+        get() = "× ${metrics.scaledDensity / metrics.density}"
 
     fun isLandscape() = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
 

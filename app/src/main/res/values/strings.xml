@@ -21,8 +21,8 @@
     <string name="screen_font_scaling">Font scaling:</string>
 
     <!-- strings for the hardware view -->
-    <string name="hardware_product_label">Brand - Product:</string>
-    <string name="hardware_brand_product">%s - %s</string>
+    <string name="hardware_brand_label">Brand:</string>
+    <string name="hardware_product_label">Product:</string>
     <string name="hardware_ram_size">RAM size:</string>
     <string name="hardware_storage_size">Storage size:</string>
     <string name="hardware_show_size">%s (%s available)</string>

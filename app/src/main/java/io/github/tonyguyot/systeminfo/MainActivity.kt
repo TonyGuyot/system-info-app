@@ -90,8 +90,8 @@ class MainActivity : AppCompatActivity() {
     fun initHardwareView() {
         val hw = Hardware(applicationContext)
         hardwareTitle.text = hw.fullProductName
-        val product = resources.getString(R.string.hardware_brand_product, hw.brand.capitalize(), hw.product)
-        hardwareModel.text = product
+        hardwareBrand.text = hw.brand.capitalize()
+        hardwareProduct.text = hw.product
         if (hw.totalMemory > 0L) {
             val memory = resources.getString(R.string.hardware_show_size, hw.totalMemoryWithUnit,
                     hw.availableMemoryWithUnit)

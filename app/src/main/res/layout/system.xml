@@ -4,6 +4,7 @@
     android:id="@+id/systemView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:visibility="visible">
 
@@ -12,9 +13,9 @@
         android:id="@+id/systemAndroidVersion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:fontFamily="@font/candal"
+        android:textSize="@dimen/title_font_size"
         />
 
     <!-- Android version code name (subtitle) -->
@@ -22,9 +23,9 @@
         android:id="@+id/systemCodeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textSize="@dimen/subtitle_font_size"
         />
 
     <!-- SDK version number -->
@@ -32,9 +33,8 @@
         android:id="@+id/systemSdkValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:textSize="@dimen/content_font_size"
         />
 
     <!-- Kernel version number -->
@@ -42,9 +42,8 @@
         android:id="@+id/systemOsVersion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:textSize="@dimen/content_font_size"
         />
 
     <!-- Current selected locale -->
@@ -52,9 +51,8 @@
         android:id="@+id/systemLocale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:textSize="@dimen/content_font_size"
         />
 
 </LinearLayout>

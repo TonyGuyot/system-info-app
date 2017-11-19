@@ -7,75 +7,109 @@
     android:visibility="gone">
 
     <!-- Manufacturer + model name (title) -->
-    <TableRow>
+    <TableRow
+        android:gravity="center_horizontal">
         <TextView
             android:id="@+id/hardwareTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/candal"
+            android:textSize="@dimen/title_font_size"
             android:layout_span="2"
             />
     </TableRow>
 
-    <!-- Brand + product name -->
-    <TableRow>
+    <!-- Brand name -->
+    <TableRow
+        android:gravity="center_horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/hardware_brand_label"
+            android:textSize="@dimen/content_font_size"
+            />
+
+        <TextView
+            android:id="@+id/hardwareBrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:fontFamily="sans-serif"
+            android:textSize="@dimen/content_font_size" />
+    </TableRow>
+
+    <!-- Product name -->
+    <TableRow
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:fontFamily="sans-serif-smallcaps"
             android:text="@string/hardware_product_label"
+            android:textSize="@dimen/content_font_size"
             />
         <TextView
-            android:id="@+id/hardwareModel"
+            android:id="@+id/hardwareProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:fontFamily="sans-serif"
+            android:textSize="@dimen/content_font_size"
             />
     </TableRow>
 
     <!-- RAM size -->
-    <TableRow>
+    <TableRow
+        android:gravity="center_horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:fontFamily="sans-serif-smallcaps"
             android:text="@string/hardware_ram_size"
+            android:textSize="@dimen/content_font_size"
             />
         <TextView
             android:id="@+id/hardwareRamSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:fontFamily="sans-serif"
+            android:textSize="@dimen/content_font_size"
             />
     </TableRow>
 
     <!-- internal storage -->
-    <TableRow>
+    <TableRow
+        android:gravity="center_horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:fontFamily="sans-serif-smallcaps"
             android:text="@string/hardware_storage_size"
+            android:textSize="@dimen/content_font_size"
             />
         <TextView
             android:id="@+id/hardwareStorageSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:fontFamily="sans-serif"
+            android:textSize="@dimen/content_font_size"
             />
     </TableRow>
 
