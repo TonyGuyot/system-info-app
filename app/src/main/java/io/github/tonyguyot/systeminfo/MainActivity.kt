@@ -1,10 +1,15 @@
 package io.github.tonyguyot.systeminfo
 
+import android.app.Dialog
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.dialog_about.*
 import kotlinx.android.synthetic.main.hardware.*
 import kotlinx.android.synthetic.main.screen.*
 import kotlinx.android.synthetic.main.system.*
@@ -103,5 +108,35 @@ class MainActivity : AppCompatActivity() {
         val storage = resources.getString(R.string.hardware_show_size, hw.totalStorageWithUnit,
                 hw.availableStorageWithUnit)
         hardwareStorageSize.text = storage
+    }
+
+    ///////////////////
+    //// MENU
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        if (item.itemId == R.id.action_about) {
+            displayAboutBox()
+            return true
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun displayAboutBox() {
+        val dlg = Dialog(this)
+        dlg.setContentView(R.layout.dialog_about)
+        dlg.setTitle(R.string.about_title)
+        val btn = dlg.findViewById<View>(R.id.about_ok) as Button
+        btn.setOnClickListener { dlg.dismiss() }
+        dlg.show()
     }
 }

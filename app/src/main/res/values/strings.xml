@@ -6,6 +6,15 @@
     <string name="title_screen">Screen</string>
     <string name="title_hardware">Hardware</string>
 
+    <!-- strings for the main menu -->
+    <string name="action_about">About</string>
+
+    <!-- strings for the about box -->
+    <string name="about_title">About</string>
+    <string name="about_version">Version 1.0</string>
+    <string name="about_description">Useful information about your device</string>
+    <string name="about_copyright">©2017, Tony Guyot</string>
+
     <!-- strings for the system view -->
     <string name="system_android_version">Android version %s</string>
     <string name="system_api_level">API level %d</string>
