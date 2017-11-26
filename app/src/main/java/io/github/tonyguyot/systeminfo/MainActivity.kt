@@ -24,7 +24,6 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.dialog_about.*
 import kotlinx.android.synthetic.main.hardware.*
 import kotlinx.android.synthetic.main.screen.*
 import kotlinx.android.synthetic.main.system.*

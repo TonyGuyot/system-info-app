@@ -19,12 +19,11 @@ import android.os.Build
 import java.io.BufferedReader
 import java.io.File
 import java.util.*
-import javax.microedition.khronos.opengles.GL10
 
 /**
  * Manage information about the system.
  */
-class System() {
+class System {
 
     val osVersion: String
 

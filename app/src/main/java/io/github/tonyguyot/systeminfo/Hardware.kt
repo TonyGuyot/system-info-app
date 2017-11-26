@@ -24,7 +24,7 @@ import android.os.StatFs
 /**
  * Manage information about the device.
  */
-class Hardware(val context: Context) {
+class Hardware(context: Context) {
 
     private var memInfo: ActivityManager.MemoryInfo
 
@@ -86,7 +86,7 @@ class Hardware(val context: Context) {
     /** total internal storage size in bytes */
     val totalStorage: Long
         get() {
-            val stat = StatFs(Environment.getExternalStorageDirectory().getPath())
+            val stat = StatFs(Environment.getExternalStorageDirectory().path)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
                 return stat.totalBytes
             }
@@ -99,7 +99,7 @@ class Hardware(val context: Context) {
     /** internal storage size available for applications in bytes */
     val availableStorage: Long
         get() {
-            val stat = StatFs(Environment.getExternalStorageDirectory().getPath())
+            val stat = StatFs(Environment.getExternalStorageDirectory().path)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
                 return stat.availableBytes
             }
