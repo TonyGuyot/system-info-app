@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.ajoberstar:grgit:2.1.0'
+    }
+}
+
+import org.ajoberstar.grgit.Grgit
+
+ext {
+    versionTag = "1.0"
+    git = Grgit.open(currentDir: projectDir)
+    gitVersionName = versionTag + "." + git.log().size()
+    gitVersionCode = git.log().size()
+    // TODO find a better grgit implementation of 'git rev-list --count HEAD'
+}
+
+task printVersion() {
+    println("Version Name: $gitVersionName")
+    println("Version Code: $gitVersionCode")
+}
