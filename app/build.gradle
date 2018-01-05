@@ -23,6 +23,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    // create a string resource to contain the version name
+    applicationVariants.all { variant ->
+        variant.resValue "string", "versionName", variant.versionName
+    }
 }
 
 dependencies {

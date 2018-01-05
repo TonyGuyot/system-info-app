@@ -10,10 +10,10 @@
     <string name="action_about">About</string>
 
     <!-- strings for the about box -->
-    <string name="about_title">About</string>
-    <string name="about_version">Version 1.0</string>
+    <string name="about_title">About application…</string>
+    <string name="about_version">Version:</string>
     <string name="about_description">Useful information about your device</string>
-    <string name="about_copyright">©2017, Tony Guyot</string>
+    <string name="about_copyright">©2017&#8211;2018, Tony Guyot</string>
 
     <!-- strings for the system view -->
     <string name="system_android_version">Android version %s</string>

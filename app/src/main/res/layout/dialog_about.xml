@@ -1,59 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- icon + name of the application -->
+    <!-- name of the application -->
     <TextView
+        android:id="@+id/about_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:text="@string/app_name"
-        android:id="@+id/about_name"
-        android:layout_gravity="center_horizontal"
         android:singleLine="true"
-        android:drawableStart="@mipmap/ic_launcher"
-        android:drawableLeft="@mipmap/ic_launcher"
         android:textSize="@dimen/title_font_size"
         android:textStyle="bold"
         />
 
-    <!-- version number -->
-    <TextView
+    <!-- icon of the application -->
+    <ImageView
+        android:id="@+id/about_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@id/about_name"
+        android:layout_toStartOf="@id/about_name"
+        android:src="@mipmap/ic_launcher"
+        android:contentDescription="@string/app_name"
+        />
+
+    <!-- version label -->
+    <TextView
+        android:id="@+id/about_version_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_name"
+        android:layout_toRightOf="@id/about_icon"
+        android:layout_toEndOf="@id/about_icon"
         android:text="@string/about_version"
-        android:id="@+id/about_version"
         android:paddingBottom="10dp"
+        />
+
+    <!-- version number -->
+    <TextView
+        android:id="@+id/about_version_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_name"
+        android:layout_toRightOf="@id/about_version_label"
+        android:layout_toEndOf="@id/about_version_label"
+        android:text="@string/versionName"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
         />
 
     <!-- short description/motto of the application -->
     <TextView
+        android:id="@+id/about_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/about_version_label"
+        android:layout_centerHorizontal="true"
         android:text="@string/about_description"
-        android:id="@+id/about_description"
         android:paddingBottom="10dp"
         />
 
     <!-- copyright/author -->
     <TextView
+        android:id="@+id/about_copyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/about_description"
+        android:layout_centerHorizontal="true"
         android:text="@string/about_copyright"
-        android:id="@+id/about_copyright"
         />
 
     <!-- the OK button -->
     <Button
+        android:id="@+id/about_ok"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/about_ok"
+        android:layout_below="@id/about_copyright"
         android:text="@android:string/ok"
-        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
         />
-</LinearLayout>
+</RelativeLayout>
