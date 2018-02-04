@@ -3,19 +3,19 @@
 
     <item
         android:id="@+id/navigation_system"
-        android:icon="@mipmap/ic_android_black_24dp"
+        android:icon="@drawable/ic_android_black_24dp"
         android:title="@string/title_system"
         />
 
     <item
         android:id="@+id/navigation_screen"
-        android:icon="@mipmap/ic_tv_black_24dp"
+        android:icon="@drawable/ic_tv_black_24dp"
         android:title="@string/title_screen"
         />
 
     <item
         android:id="@+id/navigation_hardware"
-        android:icon="@mipmap/ic_memory_black_24dp"
+        android:icon="@drawable/ic_memory_black_24dp"
         android:title="@string/title_hardware"
         />
 
